@@ -1,0 +1,9 @@
+Ücretsiz eğitim uygulamaları kaliteden ödün mü veriyor? 📊
+
+Google Play Store verilerini analiz ettiğim projemde, 'Aile ve Çocuk' kategorisinde ücretsiz uygulamaların pazarı domine etmesine rağmen, ücretli eğitim araçlarının daha yüksek kullanıcı memnuniyeti sunduğunu keşfettim.
+
+Bulgularımı Python ile analiz edip interaktif bir scrollytelling sitesine dönüştürdüm.
+
+İncelemek için: [SİTE LİNKİ]
+
+#VeriAnalizi #Scrollytelling #Python #DataScience

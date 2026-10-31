@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çocuk ve Eğitim Uygulamaları Analizi</title>
+    <meta name="description" content="Mobil uygulama pazarında çocuk ve eğitim uygulamalarının analizi.">
+    <meta property="og:title" content="Eğitim ve Çocuk Uygulamaları Gerçekten Başarılı mı?">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root { --vurgu: #2c7fb8; --arkaplan: #f4f6f8; --metin: #222; }
+        body { margin: 0; font-family: sans-serif; background: var(--arkaplan); color: var(--metin); overflow-x: hidden; }
+        header { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        h1 { font-size: 2.5rem; }
+        #scrolly { display: flex; max-width: 1200px; margin: 0 auto; padding: 1rem; }
+        article { width: 50%; padding-right: 2rem; position: relative; z-index: 2; }
+        .step { margin: 0 auto 80vh auto; background: white; padding: 20px; border-radius: 8px; border-left: 4px solid var(--vurgu); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        figure { width: 50%; position: sticky; top: 10vh; height: 80vh; display: flex; align-items: center; justify-content: center; z-index: 1; }
+        canvas { max-width: 100%; max-height: 100%; }
+        .methodology { max-width: 800px; margin: 50px auto; padding: 20px; background: white; border-radius: 8px; }
+        @media (max-width: 768px) { #scrolly { flex-direction: column; } article { width: 100%; } figure { width: 100%; height: 50vh; top: 0; } .step { margin-top: 50vh; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ücretsiz Eğitim Uygulamaları Kaliteyi Düşürüyor mu?</h1>
+        <p>Mobil uygulama pazarında çocuk ve eğitim kategorilerindeki gizli dinamikler.</p>
+        <p>Yazar: Irmak Ekelik</p>
+        <p>↓ Hikayeyi Keşfetmek İçin Aşağı Kaydırın ↓</p>
+    </header>
+    <section id="scrolly">
+        <article>
+            <div class="step" data-step="1"><h3>Aile Uygulamaları Pazarı Domine Ediyor</h3><p>Verilere göre 'Family' kategorisindeki uygulamalar sayıca açık ara önde.</p></div>
+            <div class="step" data-step="2"><h3>Ücretsiz Modelin Çekiciliği</h3><p>Kullanıcılar ücretsiz (Free) uygulamaları daha çok tercih ediyor.</p></div>
+            <div class="step" data-step="3"><h3>Puanlar Bize Ne Söylüyor?</h3><p>Ücretli eğitim uygulamalarının ortalama puanları daha yüksek.</p></div>
+        </article>
+        <figure>
+            <canvas id="myChart"></canvas>
+        </figure>
+    </section>
+    <section class="methodology">
+        <h2>Yöntem ve Yazar Bilgileri</h2>
+        <p>Analizler, Casper Nirvana NB C550 (11. Nesil i7) yerel ortamında yapılmıştır. İletişim: irmakekelik769@gmail.com | GitHub: https://github.com/irmakekelik769-hash | LinkedIn: www.linkedin.com/in/irmak-ekelik-5b0456381</p>
+    </section>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        let chart = new Chart(ctx, { type: 'bar', data: { labels: ['Eğitim', 'Aile'], datasets: [{ label: 'İndirme', data: [500000, 1200000], backgroundColor: '#2c7fb8' }] }, options: { responsive: true } });
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const s = entry.target.getAttribute('data-step');
+                    if (s == 1) { chart.data.datasets[0].data = [500000, 1200000]; chart.type = 'bar'; chart.update(); }
+                    else if (s == 2) { chart.data.labels = ['Ücretsiz', 'Ücretli']; chart.data.datasets[0].data = [4500000, 20000]; chart.update(); }
+                    else if (s == 3) { chart.type = 'line'; chart.data.labels = ['Ücretsiz Puan', 'Ücretli Puan']; chart.data.datasets[0].data = [4.1, 4.5]; chart.update(); }
+                }
+            });
+        }, { rootMargin: '-50% 0px -50% 0px' });
+        document.querySelectorAll('.step').forEach(step => observer.observe(step));
+    </script>
+</body>
+</html>

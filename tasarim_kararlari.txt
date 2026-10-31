@@ -1,0 +1,4 @@
+TASARIM KARARLARI
+Renk Paleti: Renk körü dostu olması ve odaklanmayı kolaylaştırması için nötr tonlar ve vurgu rengi olarak mavi (#2c7fb8) seçilmiştir.
+Tipografi: Okunabilirliği yüksek sans-serif kullanılmıştır.
+Grafikler: Kategorisel farkları net göstermek için Bar grafik, eğilimler için ise Çizgi (Line) grafik kullanılmıştır.
